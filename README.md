@@ -26,6 +26,25 @@ For GitHub Pages:
 3. Keep the included `CNAME` file.
 4. Point DNS for `cascade.camp` at GitHub Pages.
 
+## DNS
+
+`cascade.camp` is the apex domain. Configure these records at the DNS provider:
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` |
+| AAAA | `@` | `2606:50c0:8001::153` |
+| AAAA | `@` | `2606:50c0:8002::153` |
+| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `stevefan.github.io` |
+
+If the DNS provider supports `ALIAS` or `ANAME` records at the apex, that can
+replace the A/AAAA records by pointing `@` to `stevefan.github.io`.
+
 For Cloudflare Pages, Netlify, or Vercel:
 
 1. Use this folder as the project root.
