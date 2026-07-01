@@ -10,6 +10,7 @@ public, collaborative, and easy to edit through GitHub pull requests.
 - `index.html` is the homepage.
 - `styles.css` contains the full responsive design.
 - `script.js` powers the interest form.
+- `assets/hero-placeholder.mp4` is the temporary hero video.
 - `assets/cascade-camp-hero.webp` is the optimized hero image.
 - `assets/cascade-camp-hero.png` is the generated fallback and social preview image.
 - `CNAME` sets the custom domain for GitHub Pages.
