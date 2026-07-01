@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cascade Camp</title>
+    <meta
+      name="description"
+      content="Cascade Camp is a participant-produced gathering in Cascadia for belonging, collaboration, and offline aliveness."
+    >
+    <meta property="og:title" content="Cascade Camp">
+    <meta
+      property="og:description"
+      content="A participant-produced gathering in Cascadia for belonging, collaboration, and offline aliveness."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cascade.camp/assets/cascade-camp-hero.png">
+    <meta name="theme-color" content="#f7f3ea">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">Cascade Camp</a>
+      <nav aria-label="Primary navigation">
+        <a href="#details">Details</a>
+        <a href="#video">Video</a>
+        <a href="#updates">Updates</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="kicker">Cascadia · forming now</p>
+        <h1>A small camp for belonging and collaboration.</h1>
+        <p class="lede">
+          Cascade Camp is a participant-produced gathering for people from an
+          online network to meet slowly, make things, host what they care about,
+          and practice being a village for a weekend.
+        </p>
+        <div class="actions">
+          <a class="button" href="#updates">Get updates</a>
+          <a class="quiet-link" href="mailto:hello@cascade.camp">hello@cascade.camp</a>
+        </div>
+      </section>
+
+      <figure class="image-band">
+        <picture>
+          <source srcset="assets/cascade-camp-hero.webp" type="image/webp">
+          <img
+            src="assets/cascade-camp-hero.png"
+            alt="A camp table near evergreen foothills and a clear river"
+          >
+        </picture>
+      </figure>
+
+      <section class="section">
+        <h2>What this is</h2>
+        <div class="text-stack">
+          <p>
+            A laboratory for belonging and collaboration. Not a polished
+            conference. Not a passive retreat. A light container where attendees
+            bring the sessions, projects, meals, walks, questions, rituals, and
+            experiments that make the weekend real.
+          </p>
+          <p>
+            The starting point is simple: online relationships need places to
+            become embodied. Camp gives those relationships time, weather,
+            dishes, shared attention, and enough structure to become more real.
+          </p>
+        </div>
+      </section>
+
+      <section class="section compact-list" id="details">
+        <h2>Details</h2>
+        <dl>
+          <div>
+            <dt>Where</dt>
+            <dd>Cascadia / Pacific Northwest. Exact site TBD.</dd>
+          </div>
+          <div>
+            <dt>When</dt>
+            <dd>Dates forming. Summer or early fall is the current shape.</dd>
+          </div>
+          <div>
+            <dt>Tickets</dt>
+            <dd>Kept as low as practical. Sliding-scale target TBD.</dd>
+          </div>
+          <div>
+            <dt>Who</dt>
+            <dd>Builders, poasters, artists, organizers, parents, friends, and mutuals-of-mutuals.</dd>
+          </div>
+          <div>
+            <dt>How</dt>
+            <dd>Small core first, then build out with people who want to co-shoulder the container.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section">
+        <h2>At camp</h2>
+        <ul class="plain-list">
+          <li>Recharge offline.</li>
+          <li>Meet mutuals in a slow, cozy setting.</li>
+          <li>Share something you love or try something new.</li>
+          <li>Help with the weekend: kitchen, welcome, cleanup, recording, logistics.</li>
+          <li>Leave with stronger relationships and clearer next invitations.</li>
+        </ul>
+      </section>
+
+      <section class="section video-section" id="video">
+        <div>
+          <h2>Video</h2>
+          <p>
+            A short invitation or field note can live here once it exists. For
+            now, this page is ready for a hosted embed.
+          </p>
+        </div>
+        <div class="video-placeholder">
+          <span aria-hidden="true"></span>
+          <p>Field note coming soon</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Collaborative</h2>
+        <div class="text-stack">
+          <p>
+            The website is plain HTML, CSS, and JavaScript so collaborators can
+            edit it in GitHub, open pull requests, or ask agents to help.
+          </p>
+          <p>
+            Small assets can live in Git. Larger media should live at stable
+            URLs and be linked from the site.
+          </p>
+        </div>
+      </section>
+
+      <section class="section updates-section" id="updates">
+        <div>
+          <h2>Get updates</h2>
+          <p>
+            Leave an email and a note if you want to hear when dates, location,
+            ticket details, and applications are ready.
+          </p>
+        </div>
+        <form class="signup-form" id="signup-form">
+          <label>
+            <span>Email</span>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          </label>
+          <label>
+            <span>Optional note</span>
+            <textarea id="note" name="note" rows="4" placeholder="What would you want to bring or host?"></textarea>
+          </label>
+          <button class="button" type="submit">Join the interest list</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Cascade Camp</p>
+      <a href="mailto:hello@cascade.camp">hello@cascade.camp</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
