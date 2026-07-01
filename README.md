@@ -10,9 +10,8 @@ public, collaborative, and easy to edit through GitHub pull requests.
 - `index.html` is the homepage.
 - `styles.css` contains the full responsive design.
 - `script.js` powers the interest form.
-- `assets/hero-placeholder.mp4` is the temporary hero video.
-- `assets/cascade-camp-hero.webp` is the optimized hero image.
-- `assets/cascade-camp-hero.png` is the generated fallback and social preview image.
+- `assets/cascade-hero-loop.mp4` is the homepage hero video.
+- `assets/cascade-hero-poster.jpg` is the hero poster and social preview image.
 - `CNAME` sets the custom domain for GitHub Pages.
 - `MEDIA.md` describes the large-asset workflow.
 
@@ -81,9 +80,8 @@ Good options:
 - Mux for developer-friendly video hosting, encoding, delivery, and analytics.
 - Cloudflare R2 or another object store plus a CDN for hand-optimized MP4/WebM.
 
-The homepage currently has a video placeholder in `#video`. Replace the
-placeholder markup in `index.html` with the embed code from the chosen provider
-when a real video is ready.
+The homepage currently uses a small committed hero loop. Larger videos should be
+hosted outside the repo and referenced by URL.
 
 If self-hosting a small clip, export:
 
@@ -91,15 +89,3 @@ If self-hosting a small clip, export:
 - WebM/VP9 or AV1 as an optional modern source.
 - A poster image under 300 KB.
 - Multiple sizes if the video is more than a few seconds.
-
-## Waitlist
-
-The form currently falls back to a `mailto:hello@cascade.camp` draft.
-To connect a real form backend, set `WAITLIST_ENDPOINT` in `script.js` to an endpoint that accepts JSON:
-
-```json
-{
-  "email": "you@example.com",
-  "note": "Optional note"
-}
-```

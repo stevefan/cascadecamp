@@ -14,17 +14,17 @@
       content="A small participant-made gathering in Cascadia."
     >
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://cascade.camp/assets/cascade-camp-hero.png">
+    <meta property="og:image" content="https://cascade.camp/assets/cascade-hero-poster.jpg">
     <meta name="theme-color" content="#111912">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=video-hero">
+    <link rel="stylesheet" href="styles.css?v=luma-accents">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top">Cascade Camp</a>
       <nav aria-label="Primary navigation">
         <a href="#about">About</a>
-        <a href="#updates">Updates</a>
+        <a href="https://luma.com/kd90xmj7">Tickets</a>
       </nav>
     </header>
 
@@ -36,21 +36,21 @@
           muted
           loop
           playsinline
-          poster="assets/cascade-camp-hero.webp"
+          poster="assets/cascade-hero-poster.jpg"
         >
-          <source src="assets/hero-placeholder.mp4" type="video/mp4">
+          <source src="assets/cascade-hero-loop.mp4" type="video/mp4">
         </video>
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content">
-          <p class="kicker">Cascadia · forming now</p>
+          <p class="kicker">Cascadia · August 7-10</p>
           <h1>Cascade Camp</h1>
           <p>
             A small participant-made gathering for belonging, collaboration, and
             offline aliveness.
           </p>
           <div class="actions">
-            <a class="button" href="#updates">Get updates</a>
-            <a class="button ghost" href="mailto:hello@cascade.camp">Say hello</a>
+            <a class="button" href="https://luma.com/kd90xmj7">Get tickets</a>
+            <a class="button ghost" href="https://x.com/_rhizomia">Say hello on X</a>
           </div>
         </div>
       </section>
@@ -66,34 +66,11 @@
           questions, rituals, and experiments they want to find in the world.
         </p>
       </section>
-
-      <section class="updates-section" id="updates">
-        <div>
-          <p class="kicker">Stay close</p>
-          <h2>First details soon.</h2>
-          <p>
-            Leave an email if you want to hear when dates, location, and tickets
-            are ready.
-          </p>
-        </div>
-        <form class="signup-form" id="signup-form">
-          <label>
-            <span>Email</span>
-            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-          </label>
-          <label>
-            <span>Optional note</span>
-            <textarea id="note" name="note" rows="4" placeholder="What would you want to bring or host?"></textarea>
-          </label>
-          <button class="button" type="submit">Join the interest list</button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </section>
     </main>
 
     <footer class="site-footer">
       <p>© <span id="year"></span> Cascade Camp</p>
-      <a href="mailto:hello@cascade.camp">hello@cascade.camp</a>
+      <a href="https://x.com/_rhizomia">@_rhizomia on X</a>
     </footer>
 
     <script src="script.js"></script>

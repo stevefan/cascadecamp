@@ -1,11 +1,12 @@
 :root {
-  --ink: #151a16;
-  --muted: #626d65;
-  --paper: #f6f1e7;
-  --line: rgba(21, 26, 22, 0.16);
-  --white: #fffdf7;
-  --gold: #d7a542;
-  --green: #173d2e;
+  --ink: #1d1100;
+  --muted: #766e63;
+  --paper: #f7f0e3;
+  --line: rgba(188, 131, 0, 0.2);
+  --white: #ffffff;
+  --gold: #edb541;
+  --amber: #bc8300;
+  --pink: #f98dbe;
   color-scheme: light;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -72,7 +73,7 @@ nav a:focus-visible {
   min-height: clamp(640px, 92svh, 920px);
   overflow: hidden;
   align-items: center;
-  background: #101711;
+  background: #1d1100;
 }
 
 .hero-video,
@@ -89,8 +90,8 @@ nav a:focus-visible {
 
 .hero-shade {
   background:
-    linear-gradient(90deg, rgba(9, 14, 10, 0.78), rgba(9, 14, 10, 0.18) 72%),
-    linear-gradient(0deg, rgba(9, 14, 10, 0.72), transparent 58%);
+    linear-gradient(90deg, rgba(29, 17, 0, 0.82), rgba(29, 17, 0, 0.2) 72%),
+    linear-gradient(0deg, rgba(29, 17, 0, 0.74), transparent 58%);
 }
 
 .hero-content {
@@ -145,8 +146,8 @@ h1 {
   border: 1px solid transparent;
   border-radius: 6px;
   padding: 12px 17px;
-  background: var(--gold);
-  color: #201704;
+  background: var(--white);
+  color: var(--ink);
   font: inherit;
   font-weight: 850;
   text-decoration: none;
@@ -154,13 +155,18 @@ h1 {
 }
 
 .button.ghost {
-  border-color: rgba(255, 253, 247, 0.44);
-  background: rgba(255, 253, 247, 0.08);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--white);
 }
 
+.button:hover,
+.button:focus-visible {
+  border-color: var(--pink);
+  outline: none;
+}
+
 .about-section,
-.updates-section,
 .site-footer {
   padding-inline: clamp(20px, 6vw, 88px);
 }
@@ -181,61 +187,9 @@ h2 {
   letter-spacing: 0;
 }
 
-.about-section > p,
-.updates-section p {
+.about-section > p {
   color: var(--muted);
   font-size: clamp(1.05rem, 1.7vw, 1.22rem);
-}
-
-.updates-section {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.48fr) minmax(0, 0.72fr);
-  gap: clamp(30px, 8vw, 112px);
-  padding-top: clamp(58px, 9vw, 92px);
-  padding-bottom: clamp(64px, 10vw, 108px);
-  border-top: 1px solid var(--line);
-  background: var(--white);
-}
-
-.signup-form {
-  display: grid;
-  gap: 12px;
-}
-
-.signup-form label {
-  display: grid;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 0.92rem;
-  font-weight: 800;
-}
-
-input,
-textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 13px 14px;
-  background: var(--paper);
-  color: var(--ink);
-  font: inherit;
-  outline: none;
-}
-
-textarea {
-  resize: vertical;
-}
-
-input:focus,
-textarea:focus {
-  border-color: var(--green);
-}
-
-.form-status {
-  min-height: 24px;
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.94rem;
 }
 
 .site-footer {
@@ -253,6 +207,15 @@ textarea:focus {
   margin-bottom: 0;
 }
 
+.site-footer a {
+  color: var(--amber);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--pink);
+}
+
 @media (max-width: 760px) {
   .site-header {
     align-items: flex-start;
@@ -268,8 +231,7 @@ textarea:focus {
     padding-top: 126px;
   }
 
-  .about-section,
-  .updates-section {
+  .about-section {
     grid-template-columns: 1fr;
     gap: 20px;
   }
@@ -281,8 +243,7 @@ textarea:focus {
   }
 
   .actions,
-  .actions .button,
-  .signup-form .button {
+  .actions .button {
     width: 100%;
   }
 
