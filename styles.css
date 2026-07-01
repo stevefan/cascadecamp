@@ -167,16 +167,28 @@ h1 {
 }
 
 .about-section,
+.story-section,
 .site-footer {
   padding-inline: clamp(20px, 6vw, 88px);
 }
 
-.about-section {
+.about-section,
+.story-section {
   display: grid;
   grid-template-columns: minmax(220px, 0.48fr) minmax(0, 0.72fr);
   gap: clamp(30px, 8vw, 112px);
+}
+
+.about-section {
   padding-top: clamp(64px, 10vw, 110px);
   padding-bottom: clamp(60px, 10vw, 104px);
+}
+
+.story-section {
+  padding-top: clamp(58px, 9vw, 96px);
+  padding-bottom: clamp(70px, 11vw, 120px);
+  border-top: 1px solid var(--line);
+  background: var(--white);
 }
 
 h2 {
@@ -187,9 +199,56 @@ h2 {
   letter-spacing: 0;
 }
 
-.about-section > p {
+h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3.6vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.about-section > p,
+.story-copy p {
   color: var(--muted);
   font-size: clamp(1.05rem, 1.7vw, 1.22rem);
+}
+
+.story-copy p {
+  max-width: 720px;
+}
+
+.tweet-embeds {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.twitter-tweet {
+  margin-block: 0;
+}
+
+.ticket-panel {
+  margin-top: 34px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.ticket-panel .kicker,
+.testimonial-block .kicker {
+  margin-bottom: 10px;
+}
+
+.ticket-button {
+  margin-top: 4px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.testimonial-block {
+  margin-top: 34px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
 }
 
 .site-footer {
@@ -231,7 +290,8 @@ h2 {
     padding-top: 126px;
   }
 
-  .about-section {
+  .about-section,
+  .story-section {
     grid-template-columns: 1fr;
     gap: 20px;
   }

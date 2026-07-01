@@ -1,0 +1,29 @@
+{
+  "name": "cascadecamp",
+  "version": "1.0.0",
+  "description": "A small static launch site for `cascade.camp`.",
+  "main": "script.js",
+  "scripts": {
+    "cf:login": "wrangler login",
+    "cf:whoami": "bash -lc 'set -a; source .env; set +a; wrangler whoami'",
+    "cf:r2:list": "bash -lc 'set -a; source .env; set +a; wrangler r2 bucket list'",
+    "cf:r2:create": "bash -lc 'set -a; source .env; set +a; wrangler r2 bucket create ${CLOUDFLARE_R2_BUCKET:-cascade-camp-media}'",
+    "cf:r2:upload-hero": "bash -lc 'set -a; source .env; set +a; wrangler r2 object put ${CLOUDFLARE_R2_BUCKET:-cascade-camp-media}/hero/cascade-hero-loop.mp4 --file assets/cascade-hero-loop.mp4 --content-type video/mp4 --remote'",
+    "cf:r2:s3:list": "bash -lc 'set -a; source .env; set +a; AWS_ACCESS_KEY_ID=$R2_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$R2_SECRET_ACCESS_KEY AWS_DEFAULT_REGION=auto aws s3 ls s3://${CLOUDFLARE_R2_BUCKET:-cascade-camp-media} --endpoint-url https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com'",
+    "cf:r2:s3:upload-hero": "bash -lc 'set -a; source .env; set +a; endpoint=https://${CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com; bucket=${CLOUDFLARE_R2_BUCKET:-cascade-camp-media}; AWS_ACCESS_KEY_ID=$R2_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$R2_SECRET_ACCESS_KEY AWS_DEFAULT_REGION=auto aws s3 cp assets/cascade-hero-loop.mp4 s3://$bucket/hero/cascade-hero-loop.mp4 --endpoint-url $endpoint --content-type video/mp4 --cache-control \"public, max-age=31536000, immutable\" && AWS_ACCESS_KEY_ID=$R2_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$R2_SECRET_ACCESS_KEY AWS_DEFAULT_REGION=auto aws s3 cp assets/cascade-hero-poster.jpg s3://$bucket/hero/cascade-hero-poster.jpg --endpoint-url $endpoint --content-type image/jpeg --cache-control \"public, max-age=31536000, immutable\"'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevefan/cascadecamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevefan/cascadecamp/issues"
+  },
+  "homepage": "https://github.com/stevefan/cascadecamp#readme",
+  "devDependencies": {
+    "wrangler": "^4.106.0"
+  }
+}
