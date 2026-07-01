@@ -26,6 +26,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
+  overflow-x: clip;
 }
 
 a {
@@ -98,6 +99,8 @@ nav a:focus-visible {
   position: relative;
   z-index: 1;
   width: min(780px, 100%);
+  max-width: 100%;
+  min-width: 0;
   padding: 112px clamp(20px, 7vw, 88px) 72px;
   color: var(--white);
 }
@@ -108,6 +111,7 @@ nav a:focus-visible {
   font-size: 0.78rem;
   font-weight: 850;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 h1,
@@ -117,12 +121,13 @@ p {
 }
 
 h1 {
-  max-width: 8ch;
+  max-width: min(8ch, 100%);
   margin-bottom: 20px;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(4.4rem, 13vw, 10rem);
   line-height: 0.86;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .hero-content p:not(.kicker) {
@@ -179,6 +184,13 @@ h1 {
   gap: clamp(30px, 8vw, 112px);
 }
 
+.about-section > *,
+.story-section > *,
+.story-copy,
+.tweet-embeds {
+  min-width: 0;
+}
+
 .about-section {
   padding-top: clamp(64px, 10vw, 110px);
   padding-bottom: clamp(60px, 10vw, 104px);
@@ -225,7 +237,14 @@ h3 {
 }
 
 .twitter-tweet {
+  max-width: 100% !important;
   margin-block: 0;
+}
+
+.twitter-tweet-rendered,
+.twitter-tweet iframe {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 .ticket-panel {
