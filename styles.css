@@ -173,6 +173,7 @@ h1 {
 }
 
 .about-section,
+.place-section,
 .story-section,
 .ticket-section,
 .video-section,
@@ -183,6 +184,7 @@ h1 {
 }
 
 .about-section,
+.place-section,
 .story-section,
 .ticket-section,
 .video-section,
@@ -194,6 +196,7 @@ h1 {
 }
 
 .about-section > *,
+.place-section > *,
 .story-section > *,
 .ticket-section > *,
 .video-section > *,
@@ -201,7 +204,7 @@ h1 {
 .testimonial-section > *,
 .story-copy,
 .section-copy,
-.tweet-embeds {
+.post-grid {
   min-width: 0;
 }
 
@@ -210,6 +213,7 @@ h1 {
   padding-bottom: clamp(60px, 10vw, 104px);
 }
 
+.place-section,
 .story-section,
 .ticket-section,
 .video-section,
@@ -239,6 +243,7 @@ h3 {
 }
 
 .about-section > p,
+.place-section p,
 .story-copy p,
 .section-copy p {
   color: var(--muted);
@@ -262,36 +267,61 @@ h3 {
   color: var(--pink);
 }
 
-.tweet-embeds {
+.post-grid {
   display: grid;
-  justify-items: center;
-  gap: 16px;
-  width: min(760px, 100%);
-  margin-inline: auto;
+  gap: 12px;
   margin-top: 28px;
 }
 
-.twitter-tweet {
-  max-width: 100% !important;
-  margin-block: 0;
+.story-posts {
+  max-width: 720px;
 }
 
-.twitter-tweet-rendered,
-.twitter-tweet iframe {
-  width: 100% !important;
-  max-width: 100% !important;
+.testimonial-posts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1040px;
+  margin-inline: auto;
 }
 
-.story-copy > .tweet-embeds,
-.testimonial-section .tweet-embeds {
-  width: min(760px, calc(100vw - clamp(40px, 12vw, 176px)));
+.post-card {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  border: 1px solid rgba(188, 131, 0, 0.24);
+  border-radius: 8px;
+  padding: 16px;
+  background: #181f25;
+  color: rgba(255, 253, 247, 0.9);
+  text-decoration: none;
+}
+
+.post-card:hover,
+.post-card:focus-visible {
+  border-color: var(--pink);
+  outline: none;
+}
+
+.post-label {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.post-card strong {
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.post-card span:last-child {
+  color: rgba(255, 253, 247, 0.82);
+  font-size: 1rem;
+  line-height: 1.38;
 }
 
 @media (min-width: 901px) {
-  .story-copy > .tweet-embeds {
-    margin-left: min(-330px, -26vw);
-  }
-
   .testimonial-section .section-copy {
     grid-column: 1 / -1;
   }
@@ -432,6 +462,7 @@ h3 {
   }
 
   .about-section,
+  .place-section,
   .story-section,
   .ticket-section,
   .video-section,
@@ -446,6 +477,10 @@ h3 {
   }
 
   .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-posts {
     grid-template-columns: 1fr;
   }
 }
