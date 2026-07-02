@@ -260,7 +260,10 @@ h3 {
 
 .tweet-embeds {
   display: grid;
+  justify-items: center;
   gap: 16px;
+  width: min(760px, 100%);
+  margin-inline: auto;
   margin-top: 28px;
 }
 
@@ -273,6 +276,21 @@ h3 {
 .twitter-tweet iframe {
   width: 100% !important;
   max-width: 100% !important;
+}
+
+.story-copy > .tweet-embeds,
+.testimonial-section .tweet-embeds {
+  width: min(760px, calc(100vw - clamp(40px, 12vw, 176px)));
+}
+
+@media (min-width: 900px) {
+  .story-copy > .tweet-embeds {
+    margin-left: min(-330px, -26vw);
+  }
+
+  .testimonial-section .section-copy {
+    grid-column: 1 / -1;
+  }
 }
 
 .ticket-button {
