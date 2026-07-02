@@ -9,9 +9,10 @@ public, collaborative, and easy to edit through GitHub pull requests.
 
 - `index.html` is the homepage.
 - `styles.css` contains the full responsive design.
-- `script.js` powers the interest form.
+- `script.js` contains the small footer year helper.
 - `assets/cascade-hero-loop.mp4` is the homepage hero video.
 - `assets/cascade-hero-poster.jpg` is the hero poster and social preview image.
+- `assets/videos/` contains small poster images for externally hosted videos.
 - `CNAME` sets the custom domain for GitHub Pages.
 - `MEDIA.md` describes the large-asset workflow.
 
@@ -75,12 +76,12 @@ For the broader media workflow, see `MEDIA.md`.
 
 Good options:
 
-- YouTube or Vimeo for the fastest no-maintenance path.
+- Cloudflare R2 on `https://media.cascade.camp/` for hand-optimized MP4 clips.
 - Cloudflare Stream for a simple paid video pipeline with embeds.
 - Mux for developer-friendly video hosting, encoding, delivery, and analytics.
-- Cloudflare R2 or another object store plus a CDN for hand-optimized MP4/WebM.
+- YouTube or Vimeo for the fastest no-maintenance path.
 
-The homepage currently uses a small committed hero loop. Larger videos should be
+The homepage currently uses a small committed hero loop. Larger videos are
 hosted outside the repo and referenced by URL.
 
 If self-hosting a small clip, export:

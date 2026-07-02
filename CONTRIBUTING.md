@@ -8,7 +8,7 @@ This site is static HTML, CSS, and JavaScript. Most changes should touch one of:
 
 - `index.html` for content and structure.
 - `styles.css` for layout and visual design.
-- `script.js` for the interest form.
+- `script.js` for tiny behavior like the footer year helper.
 - `assets/` for images and small static assets.
 
 ## Pull requests

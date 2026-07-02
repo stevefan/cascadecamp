@@ -21,7 +21,7 @@ Open `http://localhost:4173`.
 
 - `index.html`: page content and semantic structure.
 - `styles.css`: responsive layout and visual system.
-- `script.js`: interest form behavior.
+- `script.js`: footer year helper.
 - `assets/`: images, favicon, and small static assets.
 - `MEDIA.md`: rules for externally hosted media URLs.
 
