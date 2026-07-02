@@ -174,12 +174,18 @@ h1 {
 
 .about-section,
 .story-section,
+.ticket-section,
+.people-section,
+.testimonial-section,
 .site-footer {
   padding-inline: clamp(20px, 6vw, 88px);
 }
 
 .about-section,
-.story-section {
+.story-section,
+.ticket-section,
+.people-section,
+.testimonial-section {
   display: grid;
   grid-template-columns: minmax(220px, 0.48fr) minmax(0, 0.72fr);
   gap: clamp(30px, 8vw, 112px);
@@ -187,7 +193,11 @@ h1 {
 
 .about-section > *,
 .story-section > *,
+.ticket-section > *,
+.people-section > *,
+.testimonial-section > *,
 .story-copy,
+.section-copy,
 .tweet-embeds {
   min-width: 0;
 }
@@ -197,7 +207,10 @@ h1 {
   padding-bottom: clamp(60px, 10vw, 104px);
 }
 
-.story-section {
+.story-section,
+.ticket-section,
+.people-section,
+.testimonial-section {
   padding-top: clamp(58px, 9vw, 96px);
   padding-bottom: clamp(70px, 11vw, 120px);
   border-top: 1px solid var(--line);
@@ -222,21 +235,26 @@ h3 {
 }
 
 .about-section > p,
-.story-copy p {
+.story-copy p,
+.section-copy p {
   color: var(--muted);
   font-size: clamp(1.05rem, 1.7vw, 1.22rem);
 }
 
-.story-copy p {
+.story-copy p,
+.section-copy p {
   max-width: 720px;
 }
 
-.story-copy a:not(.button) {
+.story-copy a:not(.button),
+.section-copy a:not(.button) {
   color: var(--amber);
 }
 
 .story-copy a:not(.button):hover,
-.story-copy a:not(.button):focus-visible {
+.story-copy a:not(.button):focus-visible,
+.section-copy a:not(.button):hover,
+.section-copy a:not(.button):focus-visible {
   color: var(--pink);
 }
 
@@ -257,29 +275,10 @@ h3 {
   max-width: 100% !important;
 }
 
-.ticket-panel,
-.people-block {
-  margin-top: 34px;
-  padding-top: 30px;
-  border-top: 1px solid var(--line);
-}
-
-.ticket-panel .kicker,
-.people-block .kicker,
-.testimonial-block .kicker {
-  margin-bottom: 10px;
-}
-
 .ticket-button {
   margin-top: 4px;
   background: var(--ink);
   color: var(--white);
-}
-
-.testimonial-block {
-  margin-top: 34px;
-  padding-top: 30px;
-  border-top: 1px solid var(--line);
 }
 
 .people-links {
@@ -342,7 +341,10 @@ h3 {
   }
 
   .about-section,
-  .story-section {
+  .story-section,
+  .ticket-section,
+  .people-section,
+  .testimonial-section {
     grid-template-columns: 1fr;
     gap: 20px;
   }
