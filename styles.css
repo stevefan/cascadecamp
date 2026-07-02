@@ -7,6 +7,8 @@
   --gold: #edb541;
   --amber: #bc8300;
   --pink: #f98dbe;
+  --night: #181f25;
+  --forest: #283522;
   color-scheme: light;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -54,6 +56,8 @@ a {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: clamp(16px, 3vw, 30px);
   color: rgba(255, 253, 247, 0.78);
   font-size: 0.95rem;
@@ -176,7 +180,6 @@ h1 {
 .place-section,
 .story-section,
 .ticket-section,
-.video-section,
 .people-section,
 .testimonial-section,
 .site-footer {
@@ -187,7 +190,6 @@ h1 {
 .place-section,
 .story-section,
 .ticket-section,
-.video-section,
 .people-section,
 .testimonial-section {
   display: grid;
@@ -199,12 +201,11 @@ h1 {
 .place-section > *,
 .story-section > *,
 .ticket-section > *,
-.video-section > *,
 .people-section > *,
 .testimonial-section > *,
 .story-copy,
 .section-copy,
-.post-grid {
+.tweet-embeds {
   min-width: 0;
 }
 
@@ -216,13 +217,38 @@ h1 {
 .place-section,
 .story-section,
 .ticket-section,
-.video-section,
 .people-section,
 .testimonial-section {
   padding-top: clamp(58px, 9vw, 96px);
   padding-bottom: clamp(70px, 11vw, 120px);
   border-top: 1px solid var(--line);
   background: var(--white);
+}
+
+.place-section {
+  display: block;
+  padding: 0;
+  border-top: 0;
+  background: var(--forest);
+  color: var(--white);
+}
+
+.place-section .kicker,
+.place-section h2 {
+  color: var(--white);
+}
+
+.place-section p {
+  color: rgba(255, 253, 247, 0.84);
+}
+
+.place-section a {
+  color: var(--gold);
+}
+
+.story-section,
+.testimonial-section {
+  background: #fffaf0;
 }
 
 h2 {
@@ -260,6 +286,17 @@ h3 {
   color: var(--amber);
 }
 
+.refs {
+  white-space: nowrap;
+}
+
+.refs a {
+  padding-inline: 1px;
+  font-size: 0.72em;
+  font-weight: 850;
+  text-decoration: none;
+}
+
 .story-copy a:not(.button):hover,
 .story-copy a:not(.button):focus-visible,
 .section-copy a:not(.button):hover,
@@ -267,58 +304,152 @@ h3 {
   color: var(--pink);
 }
 
-.post-grid {
+.place-section p {
+  color: rgba(255, 253, 247, 0.84);
+}
+
+.place-section .section-copy a:not(.button) {
+  color: var(--gold);
+}
+
+.place-section .section-copy a:not(.button):hover,
+.place-section .section-copy a:not(.button):focus-visible {
+  color: var(--pink);
+}
+
+.place-hero {
+  position: relative;
   display: grid;
-  gap: 12px;
-  margin-top: 28px;
+  min-height: clamp(520px, 72svh, 780px);
+  overflow: hidden;
+  align-items: end;
+  background: var(--forest);
 }
 
-.story-posts {
-  max-width: 720px;
+.place-video,
+.place-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.testimonial-posts {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-width: 1040px;
-  margin-inline: auto;
+.place-video {
+  object-fit: cover;
 }
 
-.post-card {
-  display: grid;
-  gap: 7px;
-  min-width: 0;
-  border: 1px solid rgba(188, 131, 0, 0.24);
-  border-radius: 8px;
-  padding: 16px;
-  background: #181f25;
-  color: rgba(255, 253, 247, 0.9);
+.place-shade {
+  background:
+    linear-gradient(90deg, rgba(24, 31, 37, 0.74), rgba(24, 31, 37, 0.12) 68%),
+    linear-gradient(0deg, rgba(24, 31, 37, 0.82), transparent 60%);
+}
+
+.place-content {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  padding: 120px clamp(20px, 6vw, 88px) clamp(44px, 7vw, 86px);
+}
+
+.place-content p:not(.kicker) {
+  max-width: 620px;
+  color: rgba(255, 253, 247, 0.88);
+  font-size: clamp(1.1rem, 2vw, 1.44rem);
+}
+
+.place-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  border: 1px solid rgba(255, 253, 247, 0.34);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: var(--white);
+  font-weight: 850;
   text-decoration: none;
 }
 
-.post-card:hover,
-.post-card:focus-visible {
+.place-link:hover,
+.place-link:focus-visible {
   border-color: var(--pink);
   outline: none;
 }
 
-.post-label {
-  color: var(--gold);
-  font-size: 0.72rem;
+.place-details {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.48fr) minmax(0, 0.72fr);
+  gap: clamp(30px, 8vw, 112px);
+  padding: clamp(28px, 5vw, 56px) clamp(20px, 6vw, 88px);
+  background: var(--forest);
+}
+
+.place-notes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.place-notes span {
+  min-width: 0;
+  border: 1px solid rgba(255, 253, 247, 0.22);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: rgba(255, 253, 247, 0.82);
+  font-size: 0.86rem;
   font-weight: 850;
-  line-height: 1;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
-.post-card strong {
-  color: var(--white);
-  font-size: 1rem;
-  line-height: 1.2;
+.place-copy {
+  max-width: 720px;
 }
 
-.post-card span:last-child {
-  color: rgba(255, 253, 247, 0.82);
-  font-size: 1rem;
-  line-height: 1.38;
+.tweet-embeds {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.tweet-shell {
+  display: grid;
+  justify-items: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.story-tweet-wrap {
+  display: grid;
+  justify-items: center;
+  width: min(620px, 100%);
+  margin: 32px auto 0;
+}
+
+.story-tweet-wrap .tweet-shell {
+  width: min(560px, 100%);
+}
+
+.network-tweets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+.network-tweets .tweet-shell {
+  flex: 1 1 320px;
+}
+
+.twitter-tweet {
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.twitter-tweet-rendered,
+.twitter-tweet iframe {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 @media (min-width: 901px) {
@@ -333,31 +464,43 @@ h3 {
   color: var(--white);
 }
 
-.video-grid {
+.ticket-facts {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 18px 0 22px;
+  max-width: 720px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--line);
 }
 
-.video-card {
+.ticket-facts > span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  padding: 14px 12px;
+  background: #fffaf0;
+}
+
+.ticket-facts strong,
+.ticket-facts span span {
+  display: block;
   min-width: 0;
 }
 
-.video-card video {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 8px;
-  background: var(--ink);
-  object-fit: cover;
+.ticket-facts strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2.6vw, 2.2rem);
+  line-height: 1;
 }
 
-.video-card h3 {
-  margin-top: 12px;
-  margin-bottom: 0;
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1.2;
+.ticket-facts span span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 850;
+  text-transform: uppercase;
 }
 
 .people-grid {
@@ -367,6 +510,7 @@ h3 {
   margin-top: 16px;
 }
 
+.organizer-badge,
 .person-badge {
   display: grid;
   grid-template-columns: 64px minmax(0, 1fr);
@@ -381,12 +525,42 @@ h3 {
   text-decoration: none;
 }
 
+.organizer-badge {
+  margin-bottom: 18px;
+  border-color: rgba(40, 53, 34, 0.26);
+  background: rgba(40, 53, 34, 0.08);
+}
+
+.organizer-badge + p {
+  margin-bottom: 0;
+}
+
+.organizer-badge strong::after {
+  content: "Organizer";
+  display: inline-block;
+  margin-left: 8px;
+  border-radius: 999px;
+  padding: 2px 7px;
+  background: rgba(188, 131, 0, 0.12);
+  color: var(--amber);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 0.68rem;
+  font-weight: 850;
+  vertical-align: 2px;
+  text-transform: uppercase;
+}
+
+.organizer-badge:hover,
+.organizer-badge:focus-visible,
 .person-badge:hover,
 .person-badge:focus-visible {
   border-color: var(--pink);
   outline: none;
 }
 
+.organizer-badge img,
 .person-badge img {
   width: 64px;
   height: 64px;
@@ -395,6 +569,9 @@ h3 {
   background: var(--paper);
 }
 
+.organizer-badge span,
+.organizer-badge strong,
+.organizer-badge em,
 .person-badge span,
 .person-badge strong,
 .person-badge em {
@@ -402,11 +579,13 @@ h3 {
   min-width: 0;
 }
 
+.organizer-badge strong,
 .person-badge strong {
   font-size: 1rem;
   line-height: 1.12;
 }
 
+.organizer-badge span span,
 .person-badge span span {
   margin-top: 3px;
   color: var(--amber);
@@ -414,6 +593,7 @@ h3 {
   font-weight: 800;
 }
 
+.organizer-badge em,
 .person-badge em {
   margin-top: 8px;
   color: var(--muted);
@@ -465,7 +645,6 @@ h3 {
   .place-section,
   .story-section,
   .ticket-section,
-  .video-section,
   .people-section,
   .testimonial-section {
     grid-template-columns: 1fr;
@@ -476,11 +655,19 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .video-grid {
+  .place-details,
+  .network-tweets {
+    display: grid;
     grid-template-columns: 1fr;
   }
 
-  .testimonial-posts {
+  .network-tweets .tweet-shell {
+    width: min(560px, 100%);
+    margin-inline: auto;
+  }
+
+  .place-notes,
+  .ticket-facts {
     grid-template-columns: 1fr;
   }
 }
