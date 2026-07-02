@@ -281,24 +281,66 @@ h3 {
   color: var(--white);
 }
 
-.people-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 12px;
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
 }
 
-.people-links a {
-  display: inline-flex;
-  min-height: 40px;
-  align-items: center;
+.person-badge {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  min-width: 0;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 8px 13px;
+  border-radius: 8px;
+  padding: 12px;
   background: rgba(188, 131, 0, 0.06);
   color: var(--ink);
-  font-weight: 800;
   text-decoration: none;
+}
+
+.person-badge:hover,
+.person-badge:focus-visible {
+  border-color: var(--pink);
+  outline: none;
+}
+
+.person-badge img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--paper);
+}
+
+.person-badge span,
+.person-badge strong,
+.person-badge em {
+  display: block;
+  min-width: 0;
+}
+
+.person-badge strong {
+  font-size: 1rem;
+  line-height: 1.12;
+}
+
+.person-badge span span {
+  margin-top: 3px;
+  color: var(--amber);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.person-badge em {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-style: normal;
+  line-height: 1.35;
 }
 
 .site-footer {
@@ -347,6 +389,10 @@ h3 {
   .testimonial-section {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .people-grid {
+    grid-template-columns: 1fr;
   }
 }
 
