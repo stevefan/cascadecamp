@@ -464,6 +464,15 @@ h3 {
   color: var(--white);
 }
 
+.date-callout {
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.date-callout strong {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+}
+
 .ticket-facts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
