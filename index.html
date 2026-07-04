@@ -17,7 +17,7 @@
     <meta property="og:image" content="https://cascade.camp/assets/cascade-hero-poster.jpg">
     <meta name="theme-color" content="#111912">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=attendees-date-1">
+    <link rel="stylesheet" href="styles.css?v=attendee-badges-2">
   </head>
   <body>
     <header class="site-header">
@@ -28,6 +28,7 @@
         <a href="#place">Place</a>
         <a href="#attendees">Attendees</a>
         <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
       </nav>
     </header>
 
@@ -149,10 +150,10 @@
           <p>
             Meals are included: Friday dinner, three meals on Saturday and
             Sunday, and Monday breakfast. The exact address is shared after
-            registration. Limited
-            <a href="https://elkenmist.com/rooms">Elkenmist rooms</a>
-            are available for rent, and adult tickets are refundable on request
-            until August 1.
+            registration. <span class="sold-out-option">Elkenmist rooms</span>
+            are sold out for this year. Tickets are fully refundable on request
+            until August 1; after that, a portion is held back for the catering
+            deposit.
           </p>
           <p>
             For latest details, discussion, and questions, join the
@@ -207,71 +208,113 @@
           <h2>Nearby orbits.</h2>
         </div>
         <div class="section-copy">
-          <a class="organizer-badge" href="https://x.com/rhizomia_">
+          <a class="organizer-badge" href="https://x.com/rhizomia_" data-badge="Camp account">
             <img src="assets/people/rhizomia_.jpg" alt="Rhizomia profile image">
             <span>
-              <strong>Rhizomia</strong>
+              <strong data-badge="Camp account">Rhizomia</strong>
               <span>@rhizomia_</span>
               <em>Organizer/project account for Cascade Camp and its regional hosting orbit.</em>
             </span>
           </a>
           <p>
-            A few of the people orbiting this year's camp:
+            A rotating handful of the people orbiting this year's camp:
           </p>
-          <div class="people-grid">
-            <a class="person-badge" href="https://x.com/_stevenfan">
-              <img src="assets/people/stevenfan.jpg" alt="Steven Fan profile image">
-              <span>
-                <strong>Steven Fan</strong>
-                <span>@_stevenfan</span>
-                <em>Holding the pot, wrangling logistics, and inviting the network.</em>
-              </span>
-            </a>
-            <a class="person-badge" href="https://x.com/sassafrassalass">
-              <img src="assets/people/sassafrassalass.jpg" alt="Shane Stranahan profile image">
-              <span>
-                <strong>Shane Stranahan</strong>
-                <span>@sassafrassalass</span>
-                <em>Bringing s'mores, host energy, and campfire gravity.</em>
-              </span>
-            </a>
-            <a class="person-badge" href="https://x.com/slimepriestess">
-              <img src="assets/people/slimepriestess.jpg" alt="Octavia Nouzen profile image">
-              <span>
-                <strong>Octavia Nouzen</strong>
-                <span>@slimepriestess</span>
-                <em>Bringing DJ vibes and late-night texture.</em>
-              </span>
-            </a>
-            <a class="person-badge" href="https://x.com/danallison">
-              <img src="assets/people/danallison.jpg" alt="Dan Allison profile image">
-              <span>
-                <strong>Dan Allison</strong>
-                <span>@danallison</span>
-                <em>Bringing Doodle Club again this year, and maybe a surprise event.</em>
-              </span>
-            </a>
-            <a class="person-badge compact" href="https://x.com/amplifiedamp">
-              <img src="assets/people/amplifiedamp.jpg" alt="ampdot profile image">
-              <span>
-                <strong>ampdot</strong>
-                <span>@amplifiedamp</span>
-              </span>
-            </a>
-            <a class="person-badge compact" href="https://x.com/Polyaletheia">
-              <img src="assets/people/polyaletheia.jpg" alt="Polyaletheia profile image">
-              <span>
-                <strong>Polyaletheia</strong>
-                <span>@Polyaletheia</span>
-              </span>
-            </a>
-            <a class="person-badge compact" href="https://x.com/abhjklss">
-              <img src="assets/people/abhjklss.jpg" alt="abhjklss profile image">
-              <span>
-                <strong>abhjklss</strong>
-                <span>@abhjklss</span>
-              </span>
-            </a>
+          <div class="people-roster" data-attendees data-visible-count="8">
+            <div class="people-grid" data-attendee-grid>
+              <a class="person-badge featured" href="https://x.com/_stevenfan" data-badge="Organizer">
+                <img src="assets/people/stevenfan.jpg" alt="Steven Fan profile image">
+                <span>
+                  <strong data-badge="Organizer">Steven Fan</strong>
+                  <span>@_stevenfan</span>
+                  <em>Holding the pot, wrangling logistics, and inviting the network.</em>
+                </span>
+              </a>
+              <a class="person-badge featured" href="https://x.com/sassafrassalass" data-badge="Organizer">
+                <img src="assets/people/sassafrassalass.jpg" alt="Shane Stranahan profile image">
+                <span>
+                  <strong data-badge="Organizer">Shane Stranahan</strong>
+                  <span>@sassafrassalass</span>
+                  <em>Bringing s'mores, host energy, and campfire gravity.</em>
+                </span>
+              </a>
+              <a class="person-badge featured" href="https://x.com/slimepriestess" data-badge="Organizer">
+                <img src="assets/people/slimepriestess.jpg" alt="Octavia Nouzen profile image">
+                <span>
+                  <strong data-badge="Organizer">Octavia Nouzen</strong>
+                  <span>@slimepriestess</span>
+                  <em>Bringing DJ vibes and late-night texture.</em>
+                </span>
+              </a>
+              <a class="person-badge featured" href="https://x.com/danallison" data-badge="Organizer">
+                <img src="assets/people/danallison.jpg" alt="Dan Allison profile image">
+                <span>
+                  <strong data-badge="Organizer">Dan Allison</strong>
+                  <span>@danallison</span>
+                  <em>Bringing Doodle Club again this year, and maybe a surprise event.</em>
+                </span>
+              </a>
+              <a class="person-badge compact" href="https://x.com/amplifiedamp">
+                <img src="assets/people/amplifiedamp.jpg" alt="@amplifiedamp profile image">
+                <span>
+                  <strong>amplifiedamp</strong>
+                  <span>@amplifiedamp</span>
+                </span>
+              </a>
+              <a class="person-badge compact" href="https://x.com/Polyaletheia">
+                <img src="assets/people/polyaletheia.jpg" alt="Ashley profile image">
+                <span>
+                  <strong>Ashley</strong>
+                  <span>@Polyaletheia</span>
+                </span>
+              </a>
+              <a class="person-badge compact" href="https://x.com/abhjklss">
+                <img src="assets/people/abhjklss.jpg" alt="@abhjklss profile image">
+                <span>
+                  <strong>abhjklss</strong>
+                  <span>@abhjklss</span>
+                </span>
+              </a>
+              <a class="person-badge compact" href="https://x.com/_ceee_">
+                <img src="assets/people/_ceee_.jpg" alt="Cee profile image">
+                <span>
+                  <strong>Cee</strong>
+                  <span>@_ceee_</span>
+                  <em>Bringing bird photos and a patient eye for small wonders.</em>
+                </span>
+              </a>
+              <a class="person-badge compact" href="https://x.com/mkultra_gf">
+                <img src="assets/people/mkultra_gf.jpg" alt="MKUltra gf profile image">
+                <span>
+                  <strong>MKUltra gf</strong>
+                  <span>@mkultra_gf</span>
+                  <em>Bringing an appreciation for tpot camps and forest-side curiosity.</em>
+                </span>
+              </a>
+              <a class="person-badge compact" href="https://x.com/lozareeno">
+                <img src="assets/people/lozareeno.jpg" alt="Lauren Uba profile image">
+                <span>
+                  <strong>Lauren Uba</strong>
+                  <span>@lozareeno</span>
+                  <em>Bringing campfire singing, laughter, and warmth to the circle.</em>
+                </span>
+              </a>
+              <a class="person-badge compact" href="https://x.com/moldbugchaser">
+                <img src="assets/people/moldbugchaser.jpg" alt="mallarduck profile image">
+                <span>
+                  <strong>mallarduck</strong>
+                  <span>@moldbugchaser</span>
+                  <em>Bringing life-affirming lore and strange little passwords.</em>
+                </span>
+              </a>
+            </div>
+            <div class="attendee-overflow" data-attendee-overflow hidden>
+              <button class="attendee-overflow-trigger" type="button" aria-expanded="false" aria-controls="attendee-popover">
+                and others!
+              </button>
+              <div class="attendee-popover" id="attendee-popover" role="dialog" aria-label="More attendees">
+                <div class="attendee-popover-grid" data-attendee-popover></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -301,6 +344,140 @@
           </div>
         </div>
       </section>
+
+      <section class="faq-section" id="faq" aria-label="Frequently asked questions">
+        <div>
+          <p class="kicker">FAQ</p>
+          <h2>Practical notes.</h2>
+        </div>
+        <div class="section-copy faq-list">
+          <details>
+            <summary>What actually happens at Cascade Camp?</summary>
+            <p>
+              A mix of participant-led offerings and emergent camp life: dancing
+              and music at night, a tea house, skyceliums webbed between trees,
+              campfires and s'mores, games, tarot readings, juggling, body
+              practices, walks, project time, and long conversations that range
+              from heady to hearty.
+            </p>
+          </details>
+          <details>
+            <summary>What is on the property?</summary>
+            <p>
+              Elkenmist has a sauna, outdoor kitchen, barn, yurt, stream, forest,
+              open fields, great hiking, skyceliums, and a few very memorable
+              trees. It is a working farm and campground, so expect rustic comfort
+              rather than hotel polish.
+            </p>
+          </details>
+          <details>
+            <summary>Is there a set schedule?</summary>
+            <p>
+              Some things are planned, but camp is intentionally participant-made.
+              On Saturday and Sunday morning after breakfast, we set the agenda
+              ad hoc on a whiteboard with big stickies and dry erase markers. The
+              shape of the weekend comes from who shows up.
+            </p>
+          </details>
+          <details>
+            <summary>What can I bring or host?</summary>
+            <p>
+              Bring the thing you would be excited to share: a discussion, skill,
+              walk, game, reading, craft, movement practice, music, tiny ritual,
+              or strange little experiment. Small, earnest offerings tend to work
+              well here.
+            </p>
+          </details>
+          <details>
+            <summary>What should I pack?</summary>
+            <p>
+              Bring normal camping basics: tent, sleeping bag, layers, sunscreen,
+              towel, bathing suit for the sauna or creek, camping chair, headlamp
+              or flashlight, comfortable shoes, toiletries, medications, and any
+              snacks or drinks that make you happy.
+            </p>
+          </details>
+          <details>
+            <summary>What are the bathrooms like?</summary>
+            <p>
+              The site has composting toilets. They are nicer than porta-potties,
+              not especially smelly, and definitely still rustic. They work a
+              little differently than standard bathrooms, so we will give a quick
+              orientation on arrival, including the solids-not-liquids practice.
+            </p>
+          </details>
+          <details>
+            <summary>Is the event insured?</summary>
+            <p>
+              Yes. Cascade Camp carries event insurance, with coverage in place
+              for the weekend. It is still a rustic working-farm environment, so
+              attendees should use ordinary care around trails, tools, fire,
+              water, sauna, and shared infrastructure.
+            </p>
+          </details>
+          <details>
+            <summary>What is the recording policy?</summary>
+            <p>
+              We use lanyards and a shared camp practice to signal whether people
+              are enthusiastically open to being recorded or would rather not be
+              recorded. Please treat the signal as a starting point, ask before
+              making someone the subject of a photo or video, and be especially
+              careful around kids, the sauna, and tender conversations.
+            </p>
+          </details>
+          <details>
+            <summary>Are there camp duties?</summary>
+            <p>
+              Yes. Cascade Camp is not a fully serviced venue; it works because
+              people help keep it working. Expect light shared duties like washing
+              dishes, putting out breakfast, and tending common spaces. Emptying
+              latrines is optional and can be an oddly interesting thing to learn,
+              but Steven can handle it if nobody feels called. We will coordinate
+              this casually, but please come ready to notice what needs doing and
+              pitch in.
+            </p>
+          </details>
+          <details>
+            <summary>Can I bring kids?</summary>
+            <p>
+              Yes. Cascade Camp is family-welcoming, and kids have been part of
+              camp every year. The site is a working farm with woods, fields, a
+              stream, and plenty for older kids to explore, but parents are
+              responsible for supervision.
+            </p>
+          </details>
+          <details>
+            <summary>How kid-friendly is it?</summary>
+            <p>
+              Upper elementary kids will likely have an easy time. Younger kids
+              can come too, but need closer eyes, especially under 3. The vibe is
+              much closer to a big camping trip with nerds than a festival.
+            </p>
+          </details>
+          <details>
+            <summary>Is any part adults-only?</summary>
+            <p>
+              The sauna is adults-only and may include nudity. The rest of camp
+              is generally wholesome, shared-meal, campfire, project-table energy.
+            </p>
+          </details>
+          <details>
+            <summary>Are rooms available?</summary>
+            <p>
+              Rooms at Elkenmist are sold out for this year. Expect tent camping
+              by default, with meals included and showers available on site.
+            </p>
+          </details>
+          <details>
+            <summary>What is the refund policy?</summary>
+            <p>
+              Tickets are fully refundable on request until August 1. After
+              August 1, refunds are still possible, but a portion is held back to
+              cover the catering deposit.
+            </p>
+          </details>
+        </div>
+      </section>
     </main>
 
     <aside class="site-note" aria-label="Site credits">
@@ -322,6 +499,6 @@
     </footer>
 
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=attendees-roster-6"></script>
   </body>
 </html>
