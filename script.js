@@ -11,9 +11,11 @@ if (attendeeRoster) {
   const trigger = attendeeRoster.querySelector(".attendee-overflow-trigger");
   const visibleCount = Number(attendeeRoster.dataset.visibleCount || 8);
   const badges = Array.from(grid.querySelectorAll(".person-badge"));
-  const isOrganizer = (badge) => badge.dataset.badge === "Organizer";
-  const pinnedBadges = badges.filter(isOrganizer);
-  const rotatingBadges = badges.filter((badge) => !isOrganizer(badge));
+  const isPinned = (badge) => (
+    badge.dataset.pinned === "true" || badge.dataset.badge === "Organizer"
+  );
+  const pinnedBadges = badges.filter(isPinned);
+  const rotatingBadges = badges.filter((badge) => !isPinned(badge));
 
   const shuffle = (items) => {
     for (let index = items.length - 1; index > 0; index -= 1) {

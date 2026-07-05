@@ -576,6 +576,7 @@ h3 {
   content: attr(data-badge);
   display: inline-block;
   margin-left: 8px;
+  margin-top: 4px;
   border-radius: 999px;
   padding: 2px 7px;
   background: rgba(188, 131, 0, 0.12);
@@ -585,7 +586,8 @@ h3 {
     sans-serif;
   font-size: 0.68rem;
   font-weight: 850;
-  vertical-align: 2px;
+  line-height: 1.2;
+  vertical-align: 1px;
   text-transform: uppercase;
 }
 
@@ -611,6 +613,22 @@ h3 {
   height: 48px;
 }
 
+.person-badge .person-avatar {
+  display: inline-flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(24, 31, 37, 0.14);
+  border-radius: 50%;
+  background: #d8d7d2;
+  color: var(--night);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
 .organizer-badge span,
 .organizer-badge strong,
 .organizer-badge em,
@@ -633,6 +651,66 @@ h3 {
   color: var(--amber);
   font-size: 0.9rem;
   font-weight: 800;
+}
+
+.organizer-badge .person-link,
+.person-badge .person-link {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 3px;
+  color: var(--amber);
+  font-size: 0.9rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.organizer-badge .person-link:hover,
+.organizer-badge .person-link:focus-visible,
+.person-badge .person-link:hover,
+.person-badge .person-link:focus-visible {
+  color: var(--pink);
+  outline: none;
+}
+
+.organizer-badge span.attendance-badge,
+.person-badge span.attendance-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 19px;
+  margin-top: 7px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 2px 7px;
+  font-size: 0.62rem;
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.organizer-badge span.attendance-badge--year-three,
+.person-badge span.attendance-badge--year-three {
+  border-color: rgba(24, 31, 37, 0.2);
+  background: #d8d7d2;
+  color: #181f25;
+}
+
+.organizer-badge span.attendance-badge--year-two,
+.person-badge span.attendance-badge--year-two {
+  border-color: rgba(188, 131, 0, 0.2);
+  background: #f0dfb6;
+  color: #75520a;
+}
+
+.organizer-badge span.attendance-badge--year-one,
+.person-badge span.attendance-badge--year-one {
+  border-color: rgba(249, 141, 190, 0.3);
+  background: #f6d8e5;
+  color: #704058;
 }
 
 .organizer-badge em,
