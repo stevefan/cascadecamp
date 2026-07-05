@@ -43,6 +43,7 @@ if (attendeeRoster) {
 
   if (overflow && popover && trigger && overflowBadges.length > 0) {
     popover.replaceChildren(...overflowBadges.map((badge) => badge.cloneNode(true)));
+    trigger.textContent = `and ${overflowBadges.length} other${overflowBadges.length === 1 ? "" : "s"}!`;
     overflow.hidden = false;
 
     const setExpanded = (isExpanded) => {
