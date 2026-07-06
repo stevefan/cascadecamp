@@ -48,13 +48,29 @@ if (attendeeRoster) {
 
     const setExpanded = (isExpanded) => {
       trigger.setAttribute("aria-expanded", String(isExpanded));
+      overflow.classList.toggle("is-open", isExpanded);
     };
+
+    trigger.addEventListener("click", (event) => {
+      event.stopPropagation();
+      setExpanded(trigger.getAttribute("aria-expanded") !== "true");
+    });
 
     overflow.addEventListener("mouseenter", () => setExpanded(true));
     overflow.addEventListener("mouseleave", () => setExpanded(false));
     overflow.addEventListener("focusin", () => setExpanded(true));
     overflow.addEventListener("focusout", (event) => {
       if (!overflow.contains(event.relatedTarget)) {
+        setExpanded(false);
+      }
+    });
+    document.addEventListener("click", (event) => {
+      if (!overflow.contains(event.target)) {
+        setExpanded(false);
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
         setExpanded(false);
       }
     });

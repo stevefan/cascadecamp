@@ -769,7 +769,8 @@ h3 {
 }
 
 .attendee-overflow:hover .attendee-popover,
-.attendee-overflow:focus-within .attendee-popover {
+.attendee-overflow:focus-within .attendee-popover,
+.attendee-overflow.is-open .attendee-popover {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%);
