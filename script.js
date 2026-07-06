@@ -9,7 +9,11 @@ if (attendeeRoster) {
   const overflow = attendeeRoster.querySelector("[data-attendee-overflow]");
   const popover = attendeeRoster.querySelector("[data-attendee-popover]");
   const trigger = attendeeRoster.querySelector(".attendee-overflow-trigger");
-  const visibleCount = Number(attendeeRoster.dataset.visibleCount || 8);
+  const mobileVisibleCount = Number(attendeeRoster.dataset.visibleCount || 8);
+  const desktopVisibleCount = Number(
+    attendeeRoster.dataset.visibleCountDesktop || mobileVisibleCount
+  );
+  const desktopRosterQuery = window.matchMedia("(min-width: 900px)");
   const badges = Array.from(grid.querySelectorAll(".person-badge"));
   const isPinned = (badge) => (
     badge.dataset.pinned === "true" || badge.dataset.badge === "Organizer"
@@ -32,25 +36,45 @@ if (attendeeRoster) {
     ...shuffle(simpleBadges),
   ];
 
-  const visibleRotatingCount = Math.max(0, visibleCount - pinnedBadges.length);
-  const visibleBadges = [
-    ...pinnedBadges,
-    ...weightedBadges.slice(0, visibleRotatingCount),
-  ];
-  const overflowBadges = weightedBadges.slice(visibleRotatingCount);
+  const setExpanded = (isExpanded) => {
+    if (!overflow || !trigger) {
+      return;
+    }
+    trigger.setAttribute("aria-expanded", String(isExpanded));
+    overflow.classList.toggle("is-open", isExpanded);
+  };
 
-  grid.replaceChildren(...visibleBadges);
+  const renderRoster = () => {
+    const visibleCount = desktopRosterQuery.matches
+      ? desktopVisibleCount
+      : mobileVisibleCount;
+    const visibleRotatingCount = Math.max(0, visibleCount - pinnedBadges.length);
+    const visibleBadges = [
+      ...pinnedBadges,
+      ...weightedBadges.slice(0, visibleRotatingCount),
+    ];
+    const overflowBadges = weightedBadges.slice(visibleRotatingCount);
 
-  if (overflow && popover && trigger && overflowBadges.length > 0) {
-    popover.replaceChildren(...overflowBadges.map((badge) => badge.cloneNode(true)));
-    trigger.textContent = `and ${overflowBadges.length} other${overflowBadges.length === 1 ? "" : "s"}!`;
-    overflow.hidden = false;
+    grid.replaceChildren(...visibleBadges);
 
-    const setExpanded = (isExpanded) => {
-      trigger.setAttribute("aria-expanded", String(isExpanded));
-      overflow.classList.toggle("is-open", isExpanded);
-    };
+    if (!overflow || !popover || !trigger) {
+      return;
+    }
 
+    setExpanded(false);
+    if (overflowBadges.length > 0) {
+      popover.replaceChildren(...overflowBadges.map((badge) => badge.cloneNode(true)));
+      trigger.textContent = `and ${overflowBadges.length} other${overflowBadges.length === 1 ? "" : "s"}!`;
+      overflow.hidden = false;
+    } else {
+      popover.replaceChildren();
+      overflow.hidden = true;
+    }
+  };
+
+  renderRoster();
+
+  if (overflow && popover && trigger) {
     trigger.addEventListener("click", (event) => {
       event.stopPropagation();
       setExpanded(trigger.getAttribute("aria-expanded") !== "true");
@@ -75,4 +99,6 @@ if (attendeeRoster) {
       }
     });
   }
+
+  desktopRosterQuery.addEventListener("change", renderRoster);
 }

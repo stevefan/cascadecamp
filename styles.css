@@ -729,6 +729,10 @@ h3 {
   margin-top: 12px;
 }
 
+.attendee-overflow[hidden] {
+  display: none;
+}
+
 .attendee-overflow-trigger {
   appearance: none;
   border: 1px solid rgba(40, 53, 34, 0.24);
