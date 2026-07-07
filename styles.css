@@ -178,6 +178,7 @@ h1 {
 
 .about-section,
 .place-section,
+.food-section,
 .story-section,
 .ticket-section,
 .people-section,
@@ -189,6 +190,7 @@ h1 {
 
 .about-section,
 .place-section,
+.food-section,
 .story-section,
 .ticket-section,
 .people-section,
@@ -201,6 +203,7 @@ h1 {
 
 .about-section > *,
 .place-section > *,
+.food-section > *,
 .story-section > *,
 .ticket-section > *,
 .people-section > *,
@@ -218,6 +221,7 @@ h1 {
 }
 
 .place-section,
+.food-section,
 .story-section,
 .ticket-section,
 .people-section,
@@ -252,6 +256,11 @@ h1 {
 
 .story-section,
 .testimonial-section {
+  background: #fffaf0;
+}
+
+.food-section {
+  grid-template-columns: minmax(220px, 0.44fr) minmax(280px, 0.58fr);
   background: #fffaf0;
 }
 
@@ -407,6 +416,41 @@ h3 {
 
 .place-copy {
   max-width: 720px;
+}
+
+.food-copy {
+  align-self: start;
+}
+
+.food-button {
+  margin-top: 6px;
+  background: var(--forest);
+  color: var(--white);
+}
+
+.food-gallery {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: clamp(26px, 5vw, 48px);
+}
+
+.food-photo {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  aspect-ratio: 4 / 3;
+}
+
+.food-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .tweet-embeds {
@@ -876,6 +920,7 @@ h3 {
 
   .about-section,
   .place-section,
+  .food-section,
   .story-section,
   .ticket-section,
   .people-section,
@@ -908,6 +953,10 @@ h3 {
   .ticket-facts {
     grid-template-columns: 1fr;
   }
+
+  .food-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 520px) {
@@ -925,6 +974,10 @@ h3 {
   }
 
   .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food-gallery {
     grid-template-columns: 1fr;
   }
 
