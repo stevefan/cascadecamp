@@ -33,6 +33,8 @@ jobs:
           mkdir _site
           cp index.html styles.css script.js CNAME _site/
           cp -R assets _site/assets
+          mkdir -p _site/field-book
+          cp -R field-book/public _site/field-book/public
           touch _site/.nojekyll
 
       - name: Upload artifact
